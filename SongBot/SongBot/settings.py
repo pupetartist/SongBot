@@ -87,12 +87,12 @@ WSGI_APPLICATION = 'SongBot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'Django_SongBot',
-        'USER': 'postgres',
-        'PASSWORD': 'asamasa',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        #'USER': 'postgres',
+        #'PASSWORD': 'asamasa',
+        #'HOST': 'localhost',
+        #'PORT': 5432,
     }
 }
 

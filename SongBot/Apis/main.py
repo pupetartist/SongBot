@@ -16,7 +16,7 @@ for song in tracks:
 	res1 = user1.getDemo(song)
 	
 	if len(res1["tracks"]["items"]) == 0:
-		print(song + " - demo not found")
+		print(song.encode('ascii', 'ignore').decode('ascii') + " - demo not found")
 	else:
 		demo = res1["tracks"]["items"][0]["preview_url"]
-		print(song + "-" + demo)
+		print(song.encode('ascii', 'ignore').decode('ascii') + " - " + demo)

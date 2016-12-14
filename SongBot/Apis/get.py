@@ -11,7 +11,7 @@ class Musix():
 
 	def getTrack(self, lyrics):
 		self.url = "http://api.musixmatch.com/ws/1.1/track.search"
-		parametros = {"apikey": self.token, "q_lyrics": lyrics}
+		parametros = {"apikey": self.token, "q_lyrics": lyrics, "page_size": "20"}
 		resultado = requests.get(self.url, params = parametros).json()
 		return resultado
 
