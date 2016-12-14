@@ -1,0 +1,22 @@
+.positioner{
+	margin-top:15vh;
+}
+.bg-dark{
+	background-color: #0A3A4A;
+}
+.c-light{
+	color: #9AC836 !important;
+}
+.c-dark{
+	color: #0A3A4A !important;
+}
+.btn-1{
+	background-color: #9AC836 !important;
+}
+.new_account{
+	text-decoration: underline;
+	margin-top: 2%;
+}
+.icon{
+	padding-right: 10px;
+}
