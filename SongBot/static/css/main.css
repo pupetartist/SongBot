@@ -20,3 +20,25 @@
 .icon{
 	padding-right: 10px;
 }
+.facebook{
+	background-color: #3b5998;
+}
+.google{
+	background-color: #dd4b39;
+}
+.spotify{
+	background-color: #00e461;
+}
+.division{
+	width: 50%;
+}
+.login2{
+	position: relative;
+	margin-top: 4%;
+}
+.alternative{
+	position: absolute;
+	top:-10px;
+	left: 45%;
+	background-color: #fff;
+}
