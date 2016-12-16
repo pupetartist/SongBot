@@ -45,6 +45,7 @@
 .c-light2{
 	color: #fff;
 }
+/*Song Player*/
 .controls_audio{
 	color:#9AC836;
 	background-color: #0A3A4A;
@@ -59,4 +60,41 @@
 .back{
 	position: absolute;
 }
-
+/*Results*/
+.results_header{
+	list-style-type: none;
+}
+.collection a.collection-item{
+	color:#0a3a4a;
+}
+.collection a.collection-item:not(.active):hover{
+	background-color: #9AC836;
+	color:#fff;
+}
+/*Profile*/
+.profile_image{
+	max-width: 180px !important;
+	margin:20px;
+}
+.username{
+	color:#0A3A4A;
+}
+/*Estrella*/
+.favorite{
+	color:#0A3A4A;
+	padding:10px;
+}
+.favorite:hover{
+	color:#9ac836;
+}
+.m-t-10{
+	margin-top: 10px;
+}
+/*Logo*/
+.logo_image{
+	max-width: 150px;
+	padding: 5px;
+}
+.logo_login{
+	max-width: 200px;
+}
