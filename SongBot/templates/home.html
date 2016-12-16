@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SongBot</title>
+</head>
+<form action="/home/resultados/" method="get">
+    <p>¿Qué canción buscas?</p>
+    <input type="text" name="q">
+    <input type="submit" value="Buscar">
+</form>
+{%for resultados in lyrics%}
+{%if resultados.demo == "-Sin demo" %}
+    <li>Canción: {{resultados.cancion}}   Artista: {{resultados.artista}}</li>
+    <li>Esta canción no se encuentra en spotify</li>
+    <p></p>        
+{%else%}
+    <p></p>
+    <li>Canción: {{resultados.cancion}}   Artista: {{resultados.artista}}</li>
+    <li><a href="{{resultados.spotify_url}}" target="_blank">Escuchalo en spotify</a></li>
+    <li>
+    <audio controls>
+    <source src="{{resultados.demo}}" type="audio/mpeg">
+    </audio>
+    </li>
+    <li><img src="{{resultados.img}}"></li>
+{%endif%}
+{%endfor%}
+
+</body>
+
+</html>

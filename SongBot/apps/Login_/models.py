@@ -30,3 +30,9 @@ class UserProfile(models.Model):
  
  
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+
+
+from django import forms
+
+class PasswordResetRequestForm(forms.Form):
+    email_or_username = forms.CharField(label=("Email Or Username"), max_length=254)

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+
+Temp_Path = os.path.realpath('.')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,16 +42,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.Finder',
     'apps.Login_',
-    'apps.Register',
     # The Django sites framework is required
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-     # Login Facebook provider
+     # Login Social Apps provider
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.spotify',
+    # Password Reset
+    'password_reset',
 ]
 
 MIDDLEWARE = [
@@ -62,11 +66,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'SongBot.urls'
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
+PROJECT_DIR  = os.path.dirname(__file__) 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), os.path.join(PROJECT_DIR, 'templates'),
+        os.path.join(SETTINGS_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +85,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'SongBot.wsgi.application'
 
@@ -121,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = '/index.html'
+LOGIN_REDIRECT_URL = '/home/'
 
 
 
@@ -140,12 +149,28 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+
+MAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'test@gmail.com'
+SERVER_EMAIL = 'test@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'test@gmail.com'
+EMAIL_HOST_PASSWORD = 'test123##'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET = True
 
 SITE_ID = 2
