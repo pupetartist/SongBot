@@ -20,7 +20,7 @@
 .icon{
 	padding-right: 10px;
 }
-.facebook{
+/*.facebook{
 	background-color: #3b5998;
 }
 .google{
@@ -28,7 +28,7 @@
 }
 .spotify{
 	background-color: #00e461;
-}
+}*/
 .division{
 	width: 50%;
 }
@@ -42,3 +42,21 @@
 	left: 45%;
 	background-color: #fff;
 }
+.c-light2{
+	color: #fff;
+}
+.controls_audio{
+	color:#9AC836;
+	background-color: #0A3A4A;
+	border-radius: 50%;
+	padding: 5px;
+	margin: 0 10px;
+}
+.album_image{
+	max-width: 250px;
+	padding:20px;
+}
+.back{
+	position: absolute;
+}
+
