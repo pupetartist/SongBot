@@ -5,11 +5,10 @@ from apps.Finder.Apis.get import Musix, Spotify
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
-def getmusic(request,):	
+def getmusic(request):	
 	
 	lyrics = request.GET.get('q')
 	if lyrics is not None and lyrics != '':
-
 		user = Musix()
 		user1 = Spotify()
 		lyrics_demo = []
@@ -35,7 +34,7 @@ def getmusic(request,):
 				lyrics_demo.append({'letra':song.encode('ascii', 'ignore').decode('ascii'), \
 				'demo':demo, 'img':img, "spotify_url":spotify_url, 'cancion':artista_cancion[0], \
 				'artista':artista_cancion[1]})
-			context = {'lyrics': lyrics_demo}
+		context = {'lyrics': lyrics_demo}
 		return render(request,'home.html', context)
 	else:
 		return render(request,'home.html')
