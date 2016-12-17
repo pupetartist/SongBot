@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Resultados</title>
+	<link rel="stylesheet" href="./SongBot/static/css/materialize.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./SongBot/static/css/main.css">
+	<link rel="stylesheet" href="./SongBot/static/font-awesome-4.7.0/css/font-awesome.min.css">
+<body>
+	<!-- Nav -->
+	<nav class="bg-dark">
+	    <div class="nav-wrapper">
+	    	<!-- Back to results -->
+			<a href="#" class="back"><i class="material-icons">keyboard_arrow_left</i></a>
+	      	<!-- <a href="#!" class="brand-logo c-light">Song<span class="c-light2">Bot</span></a> -->
+	      	<a href="#!" class="brand-logo c-light"><img src="./SongBot/static/img/logoBlanco.png" class="logo_image" alt=""></a>
+	      	<a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+	      	<ul class="right hide-on-med-and-down">
+	        	<li><a href="#">Buscar</a></li>
+	        	<li><a href="#">Historial</a></li>
+	        	<a class="waves-effect waves-light btn hide-on-med-and-up">Cerrar sesión</a>
+
+	      	</ul>
+	      	<ul class="side-nav" id="mobile-demo">
+	        	<li><a href="#">Buscar</a></li>
+	        	<li><a href="#">Historial</a></li>
+	        	<a class="waves-effect waves-light btn">Cerrar sesión</a>
+	    	</ul>
+	    </div>
+	</nav>
+	<!-- Song Details -->
+	<div class="container">
+		<!-- Add to favorites -->
+		<div class="right-align m-t-10">
+			<a href="#" class="favorite"><i class="material-icons">star</i></a>
+		</div>
+		<div class="row">
+			<div class="center-align">
+				<img src="prueba.jpeg" alt="" class="album_image">
+			</div>
+		</div>
+		<div class="row">
+			<div class="center-align">
+				<p id="song_title">Song Title</p>
+				<p id="artist_name">Artist Name</p>
+				<div> 
+				  <audio id="player">
+				  	<source src="https://p.scdn.co/mp3-preview/c27897e8eb4c0910e052c9beb6711432f3630879?cid=null">
+				  </audio>
+				  <a href="#" onclick="document.getElementById('player').play()">
+				  	<i class="material-icons controls_audio">play_arrow</i>
+				  </a>
+				  <a href="#" onclick="document.getElementById('player').pause()">
+				  	<i class="material-icons controls_audio">pause</i>
+				  </a>
+				  <a href="#" onclick="document.getElementById('player').volume += 0.1">
+				  	<i class="material-icons controls_audio">volume_up</i>
+				  </a>
+				  <a href="#" onclick="document.getElementById('player').volume -= 0.1">
+				  	<i class="material-icons controls_audio">volume_down</i>
+				  </a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="./SongBot/static/js/js/materialize.min.js"></script>
+	<script src="./SongBot/static/js/js/main.js"></script>
+</body>
+</html>

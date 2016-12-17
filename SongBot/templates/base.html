@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{% block head_title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/materialize.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="/static/css/main.css">
+		<link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <title>{% block head_title %}SongBot{% endblock %}</title>
     {% block extra_head %}
     {% endblock %}
   </head>
   <body>
+    {% block logo%}
+    <div class="container positioner">
+      <div class="row center-align">
+				<!-- <h3 class="center-align c-light">Song<span class="c-dark">Bot</span></h3> -->
+        {% load static from staticfiles %}
+				<img src="{% static "img/logoVerde.png" %}" class="logo_login" alt="">
+      {% endblock %}
+			</div>
     {% block body %}
 
     {% if messages %}
@@ -18,23 +31,13 @@
       </ul>
     </div>
     {% endif %}
-
-    <div>
-      <strong>Menu:</strong>
-      <ul>
-	{% if user.is_authenticated %}
-	<li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-	<li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-	{% else %}
-	<li><a href="{% url 'account_login' %}">Sign In</a></li>
-	<li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-	{% endif %}
-      </ul>
-    </div>
     {% block content %}
     {% endblock %}
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script src="/static/js/materialize.min.js"></script>
   </body>
 </html>

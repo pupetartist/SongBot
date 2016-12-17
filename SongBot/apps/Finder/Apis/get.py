@@ -10,7 +10,7 @@ class Musix():
 
 	def getTrack(self, lyrics):
 		self.url = "http://api.musixmatch.com/ws/1.1/track.search"
-		parametros = {"apikey": self.token, "q_lyrics": lyrics, "page_size":10, "page":20 }
+		parametros = {"apikey": self.token, "q_lyrics": lyrics, "page_size":50}
 		resultado = requests.get(self.url, params = parametros).json()
 		return resultado
 
@@ -21,6 +21,6 @@ class Spotify():
 
 	def getDemo(self, song):
 		self.url = "https://api.spotify.com/v1/search"
-		parametros = {"q": song, "type": "track", "limit": "10", "offser":20}
+		parametros = {"q": song, "type": "track", "limit": "50"}
 		resultado = requests.get(self.url, params = parametros).json()
 		return resultado

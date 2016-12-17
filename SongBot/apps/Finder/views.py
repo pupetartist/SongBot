@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def getmusic(request):	
 	
+	
 	lyrics = request.GET.get('q')
 	if lyrics is not None and lyrics != '':
 		user = Musix()
@@ -39,4 +40,7 @@ def getmusic(request):
 	else:
 		return render(request,'home.html')
 
-		
+
+
+
+	
